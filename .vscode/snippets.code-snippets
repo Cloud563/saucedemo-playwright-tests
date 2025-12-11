@@ -1,0 +1,49 @@
+{
+  "Playwright Fixture": {
+    "prefix": "fixture",
+    "body": [
+      "${1:pageName}: async ({ page }, use) => {",
+      "  const ${1:pageName} = new ${2:ClassName}(page);",
+      "  await use(${1:pageName});",
+      "},",
+    ],
+    "description": "Фикстура для инициализации объекта страницы Playwright",
+  },
+
+  "Playwright Page Template": {
+    "prefix": "pom",
+    "body": [
+      "import { Locator, Page, expect } from '@playwright/test';",
+      "import { BasePage } from '@pages/base.page';",
+      "",
+      "export class ${1:PageName} extends BasePage {",
+      "  readonly url = '${2:URL}';",
+      "  readonly title: Locator;",
+      "",
+      "  constructor(page: Page) {",
+      "    super(page);",
+      "    this.title = this.page.getByRole('heading');",
+      "  }",
+      "}",
+    ],
+    "description": "Класс страницы Playwright",
+  },
+
+  "Playwright Test Template": {
+    "prefix": "test",
+    "body": [
+      "import { test } from '@fixtures/fixtures';",
+      "",
+      "test.describe('', () => {",
+      "  test.beforeEach(async ({ page }) => {});",
+      "",
+      "  test('', async ({ page }) => {",
+      "    await test.step('', async () => {",
+
+      "    });",
+      "  });",
+      "});",
+    ],
+    "description": "Класс теста Playwright",
+  },
+}
