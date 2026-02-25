@@ -21,40 +21,30 @@ export default tseslint.config(
       '@typescript-eslint/no-floating-promises': 'error',
       '@typescript-eslint/await-thenable': 'error',
       '@typescript-eslint/no-misused-promises': 'error',
+      '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-extraneous-class': 'off',
+
       '@typescript-eslint/naming-convention': [
         'error',
-
         {
           selector: 'default',
           format: ['camelCase'],
         },
-
         {
-          selector: ['class', 'interface', 'typeAlias', 'enum', 'typeParameter'],
+          selector: ['class', 'interface', 'typeParameter', 'typeAlias'],
           format: ['PascalCase'],
         },
-
         {
-          selector: 'variable',
-          modifiers: ['const', 'exported'],
-          format: ['UPPER_CASE'],
+          selector: 'property',
+          format: ['UPPER_CASE', 'camelCase'],
         },
-
         {
-          selector: 'enum',
+          selector: ['enum'],
           format: ['PascalCase'],
         },
-
         {
-          selector: 'enumMember',
+          selector: ['enumMember'],
           format: ['UPPER_CASE'],
-        },
-
-        {
-          selector: 'memberLike',
-          modifiers: ['private'],
-          format: ['camelCase'],
         },
       ],
     },
