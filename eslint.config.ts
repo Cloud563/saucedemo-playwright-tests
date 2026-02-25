@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import tseslint from 'typescript-eslint';
 import playwright from 'eslint-plugin-playwright';
 import prettier from 'eslint-config-prettier';
@@ -21,6 +22,41 @@ export default tseslint.config(
       '@typescript-eslint/await-thenable': 'error',
       '@typescript-eslint/no-misused-promises': 'error',
       '@typescript-eslint/no-extraneous-class': 'off',
+      '@typescript-eslint/naming-convention': [
+        'error',
+
+        {
+          selector: 'default',
+          format: ['camelCase'],
+        },
+
+        {
+          selector: ['class', 'interface', 'typeAlias', 'enum', 'typeParameter'],
+          format: ['PascalCase'],
+        },
+
+        {
+          selector: 'variable',
+          modifiers: ['const', 'exported'],
+          format: ['UPPER_CASE'],
+        },
+
+        {
+          selector: 'enum',
+          format: ['PascalCase'],
+        },
+
+        {
+          selector: 'enumMember',
+          format: ['UPPER_CASE'],
+        },
+
+        {
+          selector: 'memberLike',
+          modifiers: ['private'],
+          format: ['camelCase'],
+        },
+      ],
     },
   },
   {
