@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "..src/index.js",
   "scripts": {
-    "start": "ts-node index.ts",
+    "start": "ts-node src/index.ts",
     "format": "prettier --write .",
     "prepare": "husky",
     "lint": "eslint . --ext .ts",
