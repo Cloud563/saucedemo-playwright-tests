@@ -6,7 +6,7 @@
     "------------------------------START--------------------------": "",
     "start": "ts-node src/index.ts",
     "------------------------------TEST----------------------------": "",
-    "test": "npm run clean:results && playwright test",
+    "test": "playwright test",
     "--------------------CODESTYLE & FORMAT-----------------": "",
     "scan:problems": "npx tsc --noEmit",
     "lint": "eslint . --ext .ts",
