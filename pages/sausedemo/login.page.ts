@@ -1,6 +1,6 @@
 import { Locator, Page, expect } from '@playwright/test';
 import { BasePage } from '@pages/base.page';
-import { LoginErrors } from '@test-data/saucedemo/login-page';
+import { LoginErrors } from '@test-data/saucedemo/login-page.test-data';
 
 export class SausedemoLoginPage extends BasePage {
   readonly url = 'https://www.saucedemo.com/';

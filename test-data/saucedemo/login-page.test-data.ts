@@ -5,8 +5,8 @@ export enum LoginErrors {
   LOCKED_USER = 'Epic sadface: Sorry, this user has been locked out.',
 }
 
-export const LOGINS = {
-  standartUser: 'standard_user',
+export const logins = {
+  standardUser: 'standard_user',
   lockedUser: 'locked_out_user',
   problemUser: 'problem_user',
   glitchUser: 'performance_glitch_user',
@@ -14,4 +14,4 @@ export const LOGINS = {
   visualUser: 'visual_user',
 };
 
-export const PASSWORD_VALID = 'secret_sauce';
+export const passwordValid = 'secret_sauce';

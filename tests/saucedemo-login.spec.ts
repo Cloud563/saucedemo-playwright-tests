@@ -1,5 +1,5 @@
 import { test } from '@fixtures/fixtures';
-import { LoginErrors, LOGINS, PASSWORD_VALID } from '@test-data/saucedemo/login-page';
+import { LoginErrors, logins, passwordValid } from '@test-data/saucedemo/login-page.test-data';
 import { RandomStringGenerator } from '@helpers/common/string-generator';
 
 const randomText = RandomStringGenerator.allSymbols(15);
@@ -37,8 +37,8 @@ test.describe('Тестирование страницы логина saucedemo'
     });
 
     await test.step('Ввести данные заблокированного пользователя, нажать кнопку Login', async () => {
-      await sausedemoLoginPage.userNameInput.fill(LOGINS.lockedUser);
-      await sausedemoLoginPage.userPasswordInput.fill(PASSWORD_VALID);
+      await sausedemoLoginPage.userNameInput.fill(logins.lockedUser);
+      await sausedemoLoginPage.userPasswordInput.fill(passwordValid);
       await sausedemoLoginPage.loginButton.click();
       await sausedemoLoginPage.assertLoginError(true, LoginErrors.LOCKED_USER);
     });
